@@ -1,7 +1,11 @@
-# Elections Norway
-
+---
+title: "Elections Norway"
+format: gfm
+---
 
 # valgresultat.no API
+
+
 
 - https://valgresultat.no/api
 - Storting
@@ -9,7 +13,7 @@
 - Regional results
 - `/[year]/st/oslo`
 - `/[year]/st/rogaland`
-- …
+- ...
 - Kommune (municipal)
 - `/[year]/ko`
 - Fylke (regional)
@@ -17,20 +21,21 @@
 
 # To-do
 
-1.  Build baseline function that takes year and election type and
-    outputs the overall results of the election (ideally a list of data
-    frames)
+1. Build baseline function that takes year and election type and outputs the overall results of the election (ideally a list of data frames)
     - Fill in all variables for parties
     - Include meta data
-2.  Let the function accept regions, for extracting regional results
-3.  Documentation
+2. Let the function accept regions, for extracting regional results
+3. Documentation
 
 # Example
 
-In the following code, we have set up a function that will retrieve the
-overall election results for a given year and type of election.
+In the following code, we have set up a function that will retrieve the overall election results for a given year and type of election.
 
-``` r
+```{r}
+#| echo: true
+#| eval: false
+
+
 # httr2 package for interacting with the API
 library(httr2)
 
@@ -85,4 +90,6 @@ get_election_result <- function(year, election) {
 }
 
 get_election_result(year = "2013", election = "st")
+
 ```
+
